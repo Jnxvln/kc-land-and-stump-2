@@ -1,0 +1,21 @@
+// ROOT VARIABLES
+$body-bgcolor: #D0B48A;
+$body-font-color: #000000;
+$body-font-size: 16px;
+$body-margin: 0;
+$body-padding: 0;
+
+// HELPER UTILS
+$debug-border-light: "border border-1 border-red-300";
+$debug-border: "border border-1 border-red-500";
+$debug-border-dark: "border border-1 border-red-600";
+
+// PAGE UI VARIABLES
+$page-title-color: #4B372C;
+$page-section-color: #453122;
+
+:export {
+	debugBorder: $debug-border;
+	pageTitleColor: $page-title-color;
+	pageSectionColor: $page-section-color;
+}
