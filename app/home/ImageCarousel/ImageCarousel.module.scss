@@ -1,0 +1,19 @@
+@import '/app/styles/variables.module.scss';
+
+.embla {
+	border: 1px dashed orange;
+	overflow: hidden;
+}
+
+.emblaContainer {
+	border: 1px dashed red;
+	display: flex;
+	height: 400px;
+}
+
+.emblaSlide {
+	border: 1px dashed purple;
+	position: relative;
+	flex: 0 0 100%;
+	min-width: 0;
+}

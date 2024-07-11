@@ -1,5 +1,5 @@
 import CallToday from "./home/CallToday";
-import ShowReel from "./home/ShowReel/ShowReel";
+import ImageCarousel from "./home/ImageCarousel/ImageCarousel";
 import FreeEstimates from "./home/FreeEstimates";
 import Welcome from "./home/Welcome";
 
@@ -14,7 +14,7 @@ export default function Home() {
           <div className="bg-[#8B4B1C]"><CallToday /></div>
         </div>
 
-        <ShowReel />
+        <ImageCarousel />
       </section>
     </main>
   );
