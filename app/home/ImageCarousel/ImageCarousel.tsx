@@ -1,39 +1,121 @@
 'use client';
-import { useCallback } from 'react';
-import styles from './ImageCarousel.module.scss'
-import useEmblaCarousel from 'embla-carousel-react'
-import Autoplay from 'embla-carousel-autoplay'
+
+import { useState, useEffect, } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination, Navigation } from 'swiper/modules';
 import Image from 'next/image';
+import ImageData from './ImageData.json'
+import styles from './ImageCarousel.module.scss'
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 
-export default function ImageCarousel () {
+export interface ICarouselImage {
+	path: string;
+	alt: string;
+	objectFit?: 'cover' | 'contain' | undefined;
+	id?: string | number;
+	service?: string;
+}
 
-	const [emblaRef, emblaApi] = useEmblaCarousel()		
+function useWindowSize(callback: Function) {
+	// Initialize state with undefined width/height so server and client renders match
+	// Learn more here: https://joshwcomeau.com/react/the-perils-of-rehydration/
+	const [windowSize, setWindowSize] = useState({
+	  width: 0,
+	  height: 0,
+	});
+  
+	useEffect(() => {
+	  // Handler to call on window resize
+	  function handleResize() {
+		// Set window width/height to state
+		setWindowSize({
+		  width: window.innerWidth,
+		  height: window.innerHeight,
+		});
+	  }
+	  
+	  // Add event listener
+	  window.addEventListener("resize", handleResize);
+	   
+	  // Call handler right away so state gets updated with initial window size
+	  handleResize();
+	  
+	  // Remove event listener on cleanup
+	  return () => window.removeEventListener("resize", handleResize);
+	}, []); // Empty array ensures that effect is only run on mount
 
-	const scrollPrev = useCallback(() => {
-		if (emblaApi) emblaApi.scrollPrev()
-	  }, [emblaApi])
-	
-	  const scrollNext = useCallback(() => {
-		if (emblaApi) emblaApi.scrollNext()
-	  }, [emblaApi])
+	useEffect(() => {
+		if (windowSize?.width && windowSize.width < 768) {
+			callback((prevState: any) => ({
+				...prevState,
+				slidesPerView: 1
+			}))
+		} else if (windowSize?.width && windowSize.width >= 768 && windowSize.width < 1280 ) {
+			callback((prevState: any) => ({
+				...prevState,
+				slidesPerView: 3
+			}))
+		} else if (windowSize?.width && windowSize.width >= 1280) {
+			callback((prevState: any) => ({
+				...prevState,
+				slidesPerView: 4
+			}))
+		} else if (windowSize?.width && windowSize.width >= 1440) {
+			callback((prevState: any) => ({
+				...prevState,
+				slidesPerView: 5
+			}))
+		}
+	}, [callback, windowSize])
+	return windowSize;
+  }
 
-	return (
-		<div className={styles.embla}>
-			<div className={styles.emblaViewport} ref={emblaRef}>
-				<div className={styles.emblaContainer}>
-					<div className={styles.emblaSlide}>
-						<Image src="/images/services/dirtwork/dirtwork-c9818.jpg" fill alt="dirtwork-c9818" />
-					</div>
-					<div className={styles.emblaSlide}>
-						<Image src="/images/services/gravel/gravel-k3401.jpg" fill alt="gravel-k3401" />
-					</div>
-					<div className={styles.emblaSlide}>
-						<Image src="/images/services/hauling/hauling-e81iz.jpg" fill alt="hauling-e81iz.jpg" />
-					</div>
-				</div>
-			</div>
-			<button className={styles.emblaPrev} onClick={scrollPrev}>Prev</button>
-  			<button className={styles.emblaNext} onClick={scrollNext}>Next</button>
+export default function App() {
+
+	const CarouselImage = ({ path, alt, objectFit }: ICarouselImage) => (
+		<div style={{
+			position: 'relative',
+			height: '100%'
+		}}>
+			<Image src={path} alt={alt} objectFit={objectFit} fill />
 		</div>
 	)
+
+	const [config, setConfig] = useState({
+		slidesPerView: 1,
+		navigation: true,
+		spaceBetween: 30,
+		pagination: { clickable: true },
+		modules: [Pagination, Navigation],
+	})
+
+	const size = useWindowSize(setConfig)
+
+  return (
+    <>
+		<Swiper
+			className={styles.mySwiper}
+			{...config}
+			>
+			{ ImageData && ImageData.length > 0 ? ImageData.map(image => (
+				<SwiperSlide key={image.id}>
+					<CarouselImage path={image.path} alt={image.alt} />
+				</SwiperSlide>
+			)) : (
+				<SwiperSlide>
+					<div className="flex flex-col p-4 border-2 border-gray-700 w-screen text-lg">
+						<div className="italic">
+							The image gallery is empty!
+						</div>
+						<div>
+							Please check back later
+						</div>
+					</div>
+				</SwiperSlide>
+			) }
+		</Swiper>
+    </>
+  );
 }

@@ -1,6 +1,6 @@
 import CallToday from "./home/CallToday";
-import ImageCarousel from "./home/ImageCarousel/ImageCarousel";
 import FreeEstimates from "./home/FreeEstimates";
+import ImageCarousel from "./home/ImageCarousel/ImageCarousel";
 import Welcome from "./home/Welcome";
 
 export default function Home() {
