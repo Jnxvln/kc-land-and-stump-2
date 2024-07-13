@@ -3,6 +3,12 @@
 @tailwind utilities;
 @import '/app/styles/variables.module.scss';
 
+.MAIN_LAYOUT_CONTENT {
+  // border: 5px solid blue;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
 body {
   background-color: $body-bgcolor;
   color: $body-font-color;
