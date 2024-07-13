@@ -2,7 +2,7 @@
 
 import { useState, useEffect, } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination, Navigation } from 'swiper/modules';
+import { Pagination, Navigation, Autoplay } from 'swiper/modules';
 import Image from 'next/image';
 import ImageData from './ImageData.json'
 import styles from './ImageCarousel.module.scss'
@@ -88,7 +88,12 @@ export default function App() {
 		navigation: true,
 		spaceBetween: 30,
 		pagination: { clickable: true },
-		modules: [Pagination, Navigation],
+		autoplay: {
+			delay: 4000,
+			disableOnInteraction: false,
+		},
+		modules: [Pagination, Navigation, Autoplay],
+
 	})
 
 	const size = useWindowSize(setConfig)

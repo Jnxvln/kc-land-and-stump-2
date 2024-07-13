@@ -22,6 +22,7 @@ export default function Home() {
           <ServiceCard
             title="Stump Grinding"
             description="My stump grinding services are designed to efficiently remove tree stumps from your property, restoring the space, beauty, and function of your landscape."
+            descriptionCenter
             ctaText="Learn More"
             ctaUrl="/services/stump"
             serviceType="stump"
@@ -30,6 +31,7 @@ export default function Home() {
           <ServiceCard
             title="Dirt Work"
             description="I offer minor dirt work services including grading and hauling to help ensure your property is transformed with precision and care."
+            descriptionCenter
             ctaText="Learn More"
             ctaUrl="/services/dirt"
             serviceType="dirt"
@@ -38,6 +40,7 @@ export default function Home() {
           <ServiceCard
             title="Land Clearing"
             description="Reliable and efficient land clearing services including clearing brush, vegetatioon, and small trees up to 4 inches in diameter."
+            descriptionCenter
             ctaText="Learn More"
             ctaUrl="/services/land"
             serviceType="land"
@@ -46,6 +49,7 @@ export default function Home() {
           <ServiceCard
             title="Gravel Grading"
             description="I can help create a smooth and even surface for your driveway, road, or walkway."
+            descriptionCenter
             ctaText="Learn More"
             ctaUrl="/services/gravel"
             serviceType="gravel"
