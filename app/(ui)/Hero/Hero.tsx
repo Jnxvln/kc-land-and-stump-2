@@ -1,17 +1,18 @@
-import DebugBorder from '../utils/DebugBorder'
+import styles from './Hero.module.scss'
+import { Bree_Serif } from 'next/font/google'
 
-const Hero = () => {
+const fontBreeSerif = Bree_Serif({
+	subsets: ['latin'],
+	weight: '400',
+});
 
+export default function Hero () {
   return (
-	<section>
-		<DebugBorder>
-			<div className="flex flex-col gap-3">
-				<h1 className="text-5xl text-white font-bold">KC Land</h1>
-				<h1 className="text-5xl text-white font-bold">&amp; Stump</h1>
-			</div>
-		</DebugBorder>
+	<section className={`${styles.container} ${styles.overlay}`}>
+		<div className={styles.titleContainer}>
+			<h1 className={`${styles.title} ${fontBreeSerif.className}`}>KC Land</h1>
+			<h1 className={`${styles.title} ${fontBreeSerif.className}`}>&amp; Stump</h1>
+		</div>
 	</section>
   )
 }
-
-export default Hero

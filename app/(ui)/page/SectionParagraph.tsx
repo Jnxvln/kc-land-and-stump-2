@@ -1,14 +1,11 @@
-import DebugBorder from "../utils/DebugBorder"
-
 interface IParagraph {
 	children: React.ReactNode
 	isLead?: boolean
+	marginAuto?: boolean
 }
 
-const PageParagraph = ({ children, isLead }: IParagraph) => (
-	<DebugBorder>
-		<p className={`p-3 ${isLead && 'text-xl'} max-w-xl mx-auto border-2 border-dashed border-cyan-700`}>{children}</p>
-	</DebugBorder>
-)
-
-export default PageParagraph
+export default function PageParagraph ({ children, isLead, marginAuto }: IParagraph) { 
+	return (
+		<p className={`p-3 ${isLead && 'text-2xl'} text-lg max-w-xl ${marginAuto && 'mx-auto'}`}>{children}</p>
+	)
+}

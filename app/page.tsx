@@ -1,8 +1,8 @@
 import CallToday from "./home/CallToday";
-import FreeEstimates from "./home/FreeEstimates";
+import FreeEstimates from "./home/FreeEstimates/FreeEstimates";
 import ImageCarousel from "./home/ImageCarousel/ImageCarousel";
 import ServiceCard from "./home/ServiceCard/ServiceCard";
-import Welcome from "./home/Welcome";
+import Welcome from "./home/Welcome/Welcome";
 import styles from './page.module.scss'
 
 export default function Home() {
@@ -11,10 +11,10 @@ export default function Home() {
       <div className={styles.content}>
         <Welcome />
 
-        <div className="flex items-center bg-[#4F351E]">
-          <div className="flex-grow"><FreeEstimates /></div>
-          <div className="bg-[#8B4B1C]"><CallToday /></div>
-        </div>
+          <section className={styles.estimatesSection}>
+            <div className="flex-grow"><FreeEstimates /></div>
+            <div className="bg-[#8B4B1C]"><CallToday /></div>
+          </section>
 
         <ImageCarousel />
 
@@ -23,7 +23,7 @@ export default function Home() {
             title="Stump Grinding"
             description="My stump grinding services are designed to efficiently remove tree stumps from your property, restoring the space, beauty, and function of your landscape."
             ctaText="Learn More"
-            ctaUrl="/services/stumps"
+            ctaUrl="/services/stump"
             serviceType="stump"
           />
 

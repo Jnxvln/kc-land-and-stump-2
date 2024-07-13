@@ -1,0 +1,28 @@
+@import '/app/styles/variables.module.scss';
+
+.linksContainer {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	background-image: url('/graphics/nav/seamless-wood4.png');
+	background-repeat: repeat-x;
+	background-size: cover;
+	width: 100%;
+
+	color: $nav-link-color;
+	text-align: center;
+	font-weight: bold;
+}
+
+.linkWrapper {
+	width: 100%;
+	transition: all 0.25s ease-in-out;
+	padding: 0.5em 1em;
+
+	&:hover {
+		background-color: hsla(37, 100%, 81%, 0.1);
+		transition: all 0.25s ease-in-out;
+		color: white;
+	}
+}

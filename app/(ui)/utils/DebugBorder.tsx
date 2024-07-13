@@ -3,8 +3,7 @@ export type TDebugBorder = {
 	variant?: "light" | "dark" | undefined;
 }
 
-const DebugBorder = ({ children, variant }: TDebugBorder) => {
-
+export default function DebugBorder ({ children, variant }: TDebugBorder) {
 	const colors = {
 		base: "border border-1",
 		variant_light: "border-red-300",
@@ -18,5 +17,3 @@ const DebugBorder = ({ children, variant }: TDebugBorder) => {
 	</div>
   )
 }
-
-export default DebugBorder

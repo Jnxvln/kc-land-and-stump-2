@@ -1,24 +1,21 @@
 import Link from 'next/link'
-import DebugBorder from '../utils/DebugBorder'
 import routes from './Links.json'
+import styles from './Nav.module.scss'
 
-const Nav = () => {
-
+export default function Nav() {
   const renderRoutes = () => {
     return routes.map(route => (
-      <DebugBorder key={route.id}>
+      <div key={route.id} className={styles.linkWrapper}>
           <Link href={route.url}>{route.content}</Link>
-      </DebugBorder>
+      </div>
     ))
   }
 
   return (
 	<nav>
-    <div className="flex justify-between">
+    <div className={styles.linksContainer}>
       {renderRoutes()}
     </div>
   </nav>
   )
 }
-
-export default Nav

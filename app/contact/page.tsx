@@ -1,9 +1,13 @@
-const Contact = () => {
+import PageTitle from "../(ui)/page/PageTitle/PageTitle";
+import SectionParagraph from "../(ui)/page/SectionParagraph";
+
+export default function Contact () {
   return (
-	<div>
-		<h1 className="text-5xl text-bold">Contact</h1>
-	</div>
+	<section>
+		<PageTitle isCentered>Contact</PageTitle>
+		<SectionParagraph>
+			This is the Contact page.
+		</SectionParagraph>
+	</section>
   )
 }
-
-export default Contact

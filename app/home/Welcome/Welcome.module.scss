@@ -1,0 +1,16 @@
+@import '/app/styles/variables.module.scss';
+
+.container {
+	background-image: url('/images/services/dirtwork/dirtwork-dgd13.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.overlay {
+	border-image:
+		linear-gradient(
+			hsla(37, 50%, 68%, 0.9),
+			hsla(37, 50%, 68%, 0.9))
+		fill 1;
+}
