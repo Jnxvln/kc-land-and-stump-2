@@ -5,12 +5,13 @@
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
+	padding: 4em 0;
 }
 
 .overlay {
 	border-image:
 		linear-gradient(
-			hsla(37, 50%, 68%, 0.9),
-			hsla(37, 50%, 68%, 0.9))
+			$page-bgcolor,
+			$page-bgcolor)
 		fill 1;
 }

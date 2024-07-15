@@ -14,11 +14,15 @@ $debug-border-dark: "border border-1 border-red-600";
 $nav-link-color: #E8B83C;
 
 // PAGE UI VARIABLES
+$page-bgcolor: hsla(37, 50%, 68%, 0.9);
 $page-title-color: #4B372C;
 $page-section-color: #453122;
 
+// SERVICE CARD VARIABLES
+$svc-card-title-color: rgb(225, 165, 44);
+
 // IMAGE CAROUSEL VARIABLES
-$imageCarousel-bgcolor: #261B14;
+$imageCarousel-bgcolor: #1b1410;
 
 :export {
 	debugBorder: $debug-border;

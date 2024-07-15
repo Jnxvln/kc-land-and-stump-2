@@ -1,31 +1,31 @@
 [
 	{
 		"id": "uF2TCiC1jvsd1ay82",
-		"path": "/images/services/dirtwork/dirtwork-c9818_resample.jpg",
+		"path": "/images/services/dirtwork/dirtwork-c9818.jpg",
 		"alt": "My dirt work image",
 		"service": "dirtwork"
 	},
 	{
 		"id": "bkj9UDC82uyXd4a6id",
-		"path": "/images/services/gravel/gravel-k3401_resample.jpg",
+		"path": "/images/services/gravel/gravel-k3401.jpg",
 		"alt": "My gravel image",
 		"service": "gravel"
 	},
 	{
 		"id": "YkjoiFH802U9E798",
-		"path": "/images/services/hauling/hauling-e81iz_resample.jpg",
+		"path": "/images/services/hauling/hauling-e81iz.jpg",
 		"alt": "My hauling image",
 		"service": "hauling"
 	},
 	{
 		"id": "If81FuPdUe91havH",
-		"path": "/images/services/land/land-i381u_resample.jpg",
+		"path": "/images/services/land/land-i381u.jpg",
 		"alt": "My land image",
 		"service": "land"
 	},
 	{
 		"id": "Kf2yTciucUc9Dj9f2",
-		"path": "/images/services/stump/stump-d81_resample.jpg",
+		"path": "/images/services/stump/stump-d81.jpg",
 		"alt": "My stump image",
 		"service": "stump"
 	},
@@ -35,25 +35,25 @@
 	
 	{
 		"id": "gH35x2PlrU6cx8wq",
-		"path": "/images/services/dirtwork/dirtwork-fi1ds_resample.jpg",
+		"path": "/images/services/dirtwork/dirtwork-fi1ds.jpg",
 		"alt": "My 2nd dirt work image",
 		"service": "dirtwork"
 	},
 	{
 		"id": "k6Rqn5In21EZjo7cx",
-		"path": "/images/services/gravel/gravel-x81s_resampled.jpg",
+		"path": "/images/services/gravel/gravel-x81s.jpg",
 		"alt": "My 2nd gravel image",
 		"service": "gravel"
 	},
 	{
 		"id": "Ll5bQs3Wx91uf872",
-		"path": "/images/services/land/land-ijucu2_resampled.jpg",
+		"path": "/images/services/land/land-ijucu2.jpg",
 		"alt": "My 2nd land image",
 		"service": "land"
 	},
 	{
 		"id": "U9rN85h8vysk426sgcv",
-		"path": "/images/services/stump/stump-ckuh_resampled.jpg",
+		"path": "/images/services/stump/stump-ckuh.jpg",
 		"alt": "My 2nd stump image",
 		"service": "stump"
 	}

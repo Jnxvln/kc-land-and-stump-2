@@ -24,8 +24,8 @@
 .title {
 	// border: 1px dashed purple;
 	font-weight: bold;
-	color: white;
-	font-size: 2rem;
+	color: $svc-card-title-color;
+	font-size: 2.2rem;
 	text-align: center;
 	width: 100%;
 }
@@ -63,46 +63,62 @@
 .svc-stump {
 	border-image:
 		linear-gradient(
-			hsla(0, 55%, 10%, 0.8),
-			hsla(0, 55%, 10%, 0.8),
+			hsla(0, 55%, 10%, 0.90),
+			hsla(0, 55%, 10%, 0.90),
 		)
 		fill 1;
 		// Background image
 		background-image: url("/images/services/stump/stump-d81.jpg");
+		background-position: center;
 }
 
 .svc-dirt {
 	// Background overlay color
 	border-image:
 	linear-gradient(
-		hsla(35, 48%, 13%, 0.9),
-		hsla(35, 48%, 13%, 0.9),
+		hsla(35, 48%, 13%, 0.90),
+		hsla(35, 48%, 13%, 0.90),
 	)
 	fill 1;
 	// Background image
 	background-image: url("/images/services/dirtwork/dirtwork-j381u.jpg");
+	background-position: center;
 }
 
 .svc-land {
 	// Background overlay color
 	border-image:
 	linear-gradient(
-		hsla(90, 19%, 11%, 0.9),
-		hsla(90, 19%, 11%, 0.9),
+		hsla(90, 19%, 11%, 0.90),
+		hsla(90, 19%, 11%, 0.90),
 	)
 	fill 1;
 	// Background image
 	background-image: url("/images/services/land/land-i381u.jpg");
+	background-position: center;
 }
 
 .svc-gravel {
 	// Background overlay color
 	border-image:
 	linear-gradient(
-		hsla(240, 33%, 14%, 0.9),
-		hsla(240, 33%, 14%, 0.9),
+		hsla(240, 33%, 14%, 0.90),
+		hsla(240, 33%, 14%, 0.90),
 	)
 	fill 1;
 	// Background image
 	background-image: url("/images/services/gravel/gravel-k3401.jpg");
+	background-position: center;
+}
+
+// MEDIA QUERIES 
+
+@media screen and (min-width: 768px) {
+	.title {
+		font-size: 4rem;
+	}
+	.description {
+		font-size: 1.6rem;
+		max-width: 780px;
+	}
 }

@@ -1,26 +1,87 @@
 @import '/app/styles/variables.module.scss';
 
+$borderRadius: 10px;
+$serviceContainerBgcolor: rgb(104, 85, 58);
+
+.container {
+	background-color: $page-bgcolor;
+	padding: 2em;
+}
+
 .linksContainer {
-	border: 2px dashed blue;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	gap: 10px;
-	max-width: 580px;
-	margin: 1em auto;
+	// border: 2px dashed blue;
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 15px;
+	max-width: 900px;
+	margin: 0 auto;
 }
 
 .serviceLink {
-	border: 2px dashed rgb(177, 50, 71);
-	font-weight: bold;
-	border-radius: 5px;
-	padding: 0.5em 2em;
-	transition: all 0.25s ease-in-out;
-	max-width: 36rem;
-	width: 100%;
+	.serviceContainer {
+		transition: background-color 0.25s ease-in-out;
+	}
 
 	&:hover {
-		background-color: rgb(193, 155, 130);
-		transition: all 0.25s ease-in-out;
+		.serviceContainer {
+			background-color: darken($serviceContainerBgcolor, 10%);
+			transition: all 0.25s ease-in-out;
+		}
+	}
+}
+
+.image {
+	border-top-left-radius: $borderRadius;
+	border-bottom-left-radius: $borderRadius;
+}
+
+.serviceContainer {
+	background-color: $serviceContainerBgcolor;
+	border-radius: $borderRadius;
+	display: flex;
+	padding: 0.6em;
+
+	.leftSide {
+		// border: 1px dashed darken($page-bgcolor, 20%);
+		border-radius: $borderRadius;
+		border-top-right-radius: 0;
+		border-bottom-right-radius: 0;
+		position: relative;
+		width: 30%;
+		height: 100px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.rightSide {
+		border: 2px dashed lighten($serviceContainerBgcolor, 10%);
+		border-radius: $borderRadius;
+		border-top-left-radius: 0;
+		border-bottom-left-radius: 0;
+		color: lighten($page-bgcolor, 10%);
+		width: 70%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.serviceName {
+		font-weight: bold;
+		text-align: center;
+	}
+}
+
+// MEDIA QUERIES 
+
+@media screen and (min-width: 768px) {
+	.linksContainer {
+		grid-template-columns: 1fr 1fr;
+	}
+	.leftSide {
+		height: 160px !important;
+	}
+	.rightSide {
+		font-size: 1.5rem;
 	}
 }

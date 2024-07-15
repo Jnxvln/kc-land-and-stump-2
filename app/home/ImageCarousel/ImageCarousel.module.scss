@@ -7,7 +7,7 @@
 
 .mySwiper {
 	// border: 3px solid red;
-	height: 400px;
+	height: 500px;
 	background-color: $imageCarousel-bgcolor;
 	padding: 3em 2em !important;
 }
@@ -29,4 +29,11 @@
 	height: 100%;
 	object-fit: cover;
 }
-  
+
+// MEDIA QUERIES
+
+@media screen and (min-width: 768px) {
+	.mySwiper {
+		height: 640px;
+	}
+}

@@ -1,5 +1,4 @@
-import CallToday from "./home/CallToday";
-import FreeEstimates from "./home/FreeEstimates/FreeEstimates";
+import FreeEstimatesCallToday from "./home/FreeEstimatesCallToday/FreeEstimatesCallToday";
 import ImageCarousel from "./home/ImageCarousel/ImageCarousel";
 import ServiceCard from "./home/ServiceCard/ServiceCard";
 import Welcome from "./home/Welcome/Welcome";
@@ -10,18 +9,13 @@ export default function Home() {
     <main className={styles.main}>
       <div className={styles.content}>
         <Welcome />
-
-          <section className={styles.estimatesSection}>
-            <div className="flex-grow"><FreeEstimates /></div>
-            <div className="bg-[#8B4B1C]"><CallToday /></div>
-          </section>
-
+        <FreeEstimatesCallToday />
         <ImageCarousel />
 
         <section>
           <ServiceCard
             title="Stump Grinding"
-            description="My stump grinding services are designed to efficiently remove tree stumps from your property, restoring the space, beauty, and function of your landscape."
+            description="I can efficiently remove tree stumps from your property, restoring the space, beauty, and function of your landscape."
             descriptionCenter
             ctaText="Learn More"
             ctaUrl="/services/stump"
@@ -39,7 +33,7 @@ export default function Home() {
 
           <ServiceCard
             title="Land Clearing"
-            description="Reliable and efficient land clearing services including clearing brush, vegetatioon, and small trees up to 4 inches in diameter."
+            description="Reliable and efficient land clearing services including clearing brush, vegetation, and small trees."
             descriptionCenter
             ctaText="Learn More"
             ctaUrl="/services/land"
@@ -48,7 +42,7 @@ export default function Home() {
 
           <ServiceCard
             title="Gravel Grading"
-            description="I can help create a smooth and even surface for your driveway, road, or walkway."
+            description="I can haul and spread gravel, creating smooth and even surfaces for your driveway, small road, or walkway."
             descriptionCenter
             ctaText="Learn More"
             ctaUrl="/services/gravel"

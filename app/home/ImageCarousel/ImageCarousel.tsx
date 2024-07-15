@@ -47,25 +47,20 @@ function useWindowSize(callback: Function) {
 	}, []); // Empty array ensures that effect is only run on mount
 
 	useEffect(() => {
-		if (windowSize?.width && windowSize.width < 768) {
+		if (windowSize?.width && windowSize.width >= 1 && windowSize.width < 700) {
 			callback((prevState: any) => ({
 				...prevState,
 				slidesPerView: 1
 			}))
-		} else if (windowSize?.width && windowSize.width >= 768 && windowSize.width < 1280 ) {
+		} else if (windowSize?.width && windowSize.width >= 700 && windowSize.width < 900 ) {
+			callback((prevState: any) => ({
+				...prevState,
+				slidesPerView: 2
+			}))
+		} else if (windowSize?.width && windowSize.width >= 900) {
 			callback((prevState: any) => ({
 				...prevState,
 				slidesPerView: 3
-			}))
-		} else if (windowSize?.width && windowSize.width >= 1280) {
-			callback((prevState: any) => ({
-				...prevState,
-				slidesPerView: 4
-			}))
-		} else if (windowSize?.width && windowSize.width >= 1440) {
-			callback((prevState: any) => ({
-				...prevState,
-				slidesPerView: 5
 			}))
 		}
 	}, [callback, windowSize])

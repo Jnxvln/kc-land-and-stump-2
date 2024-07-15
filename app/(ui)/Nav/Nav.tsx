@@ -1,15 +1,16 @@
+'use client';
+import { usePathname } from 'next/navigation';
 import Link from 'next/link'
 import routes from './Links.json'
 import styles from './Nav.module.scss'
 
 export default function Nav() {
+
+  const pathname = usePathname()
+
   const renderRoutes = () => {
     return routes.map(route => (
-      // <div key={route.id} className={styles.linkWrapper}>
-      //     <Link href={route.url}>{route.content}</Link>
-      // </div>
-
-      <Link key={route.id} href={route.url} className={styles.linkWrapper}>
+      <Link key={route.id} href={route.url} className={`${styles.linkWrapper} ${pathname === route.url && styles.activeLink}`}>
         <div>{route.content}</div>
       </Link>
     ))

@@ -1,0 +1,97 @@
+@import '/app/styles/variables.module.scss';
+
+.container {
+	// border: 2px dashed blue;
+	display: flex;
+	background-image: url("/graphics/grass-texture_desat.png");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 100%;
+}
+
+.estimateContainer {
+	width: 80%;
+}
+
+.overlay {
+	border-image:
+		linear-gradient(
+			hsla(28, 40%, 16%, 0.9),
+			hsla(28, 40%, 16%, 0.9))
+		fill 1;
+}
+
+.estimateContent {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	padding: 1.8em 0;
+}
+
+.estimateTitle {
+	color: #E8B83C;
+	font-weight: bold;
+	font-size: 1.7rem;
+}
+
+.phone {
+	color: white;
+	font-weight: bold;
+	font-size: 1rem;
+}
+
+.callContainer {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: #8B4B1C;
+	color: white;
+	font-weight: bold;
+	font-size: 1.2rem;
+	width: 40%;
+}
+
+// MEDIA QUERIES 
+
+@media screen and (min-width: 375px) {
+	.callContainer {
+		font-size: 1.4rem;
+	}
+	.estimateTitle {
+		font-size: 1.8rem;
+	}
+	.phone {
+		font-size: 1.2rem;
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.callContainer {
+		width: 30%;
+		font-size: 1.8rem;
+	}
+	.estimateTitle {
+		font-size: 2.5rem;
+	}
+	.phone {
+		font-size: 1.4rem;
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	.callContainer {
+		width: 25%;
+		font-size: 2rem;
+	}
+	.estimateContent {
+		padding: 2.2em 0;
+	}
+	.estimateTitle {
+		font-size: 3rem;
+	}
+	.phone {
+		font-size: 1.6rem;
+	}
+}

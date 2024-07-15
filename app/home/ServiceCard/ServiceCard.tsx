@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { Bree_Serif } from 'next/font/google';
 import styles from './ServiceCard.module.scss'
 
 export interface IServiceCard  {
@@ -11,10 +12,16 @@ export interface IServiceCard  {
 	ctaBgcolor?: string;
 }
 
+const fontBreeSerif = Bree_Serif({
+	subsets: ['latin'],
+	weight: '400',
+});
+
+
 export default function ServiceCard ({ title, description, descriptionCenter, ctaText, ctaUrl, ctaBgcolor, serviceType }: IServiceCard) {
 	return (
 		<section className={`${styles.hero} ${styles.overlay} ${styles[`svc-${serviceType}`]}`}>
-			<h2 className={styles.title}>{title}</h2>
+			<h2 className={`${styles.title} ${fontBreeSerif.className}`}>{title}</h2>
 			
 			<div className={`${styles.description} ${descriptionCenter && 'text-center'}`}>			
 				{description}
